@@ -1,0 +1,234 @@
+/********** Спецификация **********/
+body, ul, li, p, h1, h2, h3, h4, h5, h6, hr, label,
+button, input, span, svg, header, footer, select, option, section, 
+div, textarea{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;	
+	box-sizing: border-box;
+}
+
+body, button, select, option, input, textarea, a{
+	font-family: 'Arial', sans-serif;
+	color: #000;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+ul, li{
+	display: block;
+}
+
+a{
+	text-decoration: none;
+}
+
+textarea{
+	resize: none;
+}
+
+footer, header, section, main{
+	margin: 0 auto;	
+	max-width: 1440px;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+h2{
+	color: #fff;
+}
+
+/********** Приложение **********/
+
+header{
+	background: #3385ff;
+	height: 80px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;align-items: center;
+}
+
+.btn{
+	background: #99c2ff;
+	border: 2px solid #99c2ff;
+	color: #fff;
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: uppercase;
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	cursor: pointer;
+	border-radius: 3px;
+	padding: 10px 20px;
+	&:hover{
+		background: #fff;
+		color: #99c2ff;
+	}
+}
+
+.btn_yellow{
+	background: #b3b300;
+	border: 2px solid #b3b300;
+	&:hover{
+		background: #fff;
+		color: #b3b300;
+	}
+}
+
+.btn_green{
+	background: #00cc66;
+	border: 2px solid #00cc66;
+	&:hover{
+		background: #fff;
+		color: #00cc66;
+	}	
+}
+
+.btn_gray{
+	background: transparent;
+	border: 2px solid transparent;
+	color: #555;	
+	margin-top: 15px;
+	&:hover{
+		background: transparent;
+		color: #555;
+	}
+}
+
+.logo{
+	font-size: 30px;
+	font-weight: 700;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #eee;
+	cursor: pointer;
+}
+
+.board{
+	background: #66a3ff;
+	position: relative;
+	padding: 0 10px;
+	min-height: calc(100vh - 80px);
+	overflow: hidden;
+}
+
+.board__heading{
+	padding: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.lists{
+	display: grid;
+	grid-template-columns: repeat( 4, 1fr);
+	align-items: start;
+	grid-gap: 30px;
+}
+
+.list{
+	background: #eee;
+	padding: 10px;
+	border-radius: 3px;
+	position: relative;
+	li{
+		background: #fff;
+		border-radius: 3px;
+		padding: 5px;
+		cursor: pointer;
+		word-wrap: break-word;
+		&:not(:last-of-type){
+			margin-bottom: 5px;
+		}
+	}
+	h4{
+		margin-bottom: 10px;
+		height: 23px;
+	}
+}
+
+.list__field{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	box-shadow: 0 0 10px #ccc inset;
+	border: 1px solid #ccc;
+	textarea&{
+		margin-top: 15px;
+	}
+}
+
+.list__heading-rename{
+	margin-bottom: 10px;
+	height: 23px;	
+}
+
+.list__close{
+	position: absolute;
+	font-size: 40px;
+	line-height: 0.7;
+	display: flex;
+	top: 0;
+	right: 0;
+}
+
+.list__form-close{
+	font-size: 60px;
+	font-weight: 700;
+	margin-left: 20px;
+	line-height: 0.5;
+}
+
+.list__buttons{
+	display: flex;
+	align-items: center;
+}
+
+aside{
+	position: absolute;
+	background: #eee;
+	width: 250px;
+	height: calc(100vh - 80px);
+	top: 0;
+	right: -250px;
+	transition: right 0.5s;
+	&.visible{
+		right: 0;		
+	}
+}
+
+.modal-overlay{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.modal{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	min-height: 400px;
+	transform: translate(-50%, -50%);
+	background-color: tomato;
+}
+
+.modal__close{
+	position: absolute;
+	font-size: 50px;
+	cursor: pointer;
+	line-height: 0.5;
+	top: 0;
+	right: 0;	
+}
