@@ -9,7 +9,7 @@ export default class App extends Component {
   state = {
   	sidebarVisible: false,
   	modalVisible: false,
-    lists: JSON.parse(localStorage.getItem('state'))
+    lists: JSON.parse(localStorage.getItem('state')) || []
   }
 
 	handleShowSidebar = () => {
