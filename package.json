@@ -31,14 +31,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "material-components-web": "^1.1.0",
-    "mobx": "^5.9.0",
-    "mobx-react": "^5.4.3",
     "react": "^16.8.6",
-    "react-beautiful-dnd": "^11.0.0-beta",
-    "react-dom": "^16.8.6",
-    "react-icons": "^3.5.0",
-    "react-lazyload": "^2.5.0",
-    "react-transition-group": "^2.7.1"
+    "react-dom": "^16.8.6"
   }
 }
