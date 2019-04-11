@@ -9,6 +9,7 @@ export default class App extends Component {
   state = {
   	sidebarVisible: false,
   	modalVisible: false,
+  	modalTitle: '',
     lists: JSON.parse(localStorage.getItem('state')) || []
   }
 
@@ -86,8 +87,8 @@ export default class App extends Component {
     this.setState({ modalVisible: false });		
 	};
 
-	showModal = () => {
-    this.setState({ modalVisible: true });		
+	showModal = (title) => {
+    this.setState({ modalVisible: true, modalTitle: title });		
 	};
 
 	onOverlayClick = (event) => {
@@ -124,7 +125,7 @@ export default class App extends Component {
 	      		</button>      			
       		</div>
       		<ul className="lists">
-          { lists.map( (list, idx) =>( 
+          { lists.map( (list, idx) => ( 
           	<List            		
           		key={list.id} 
           		onClose={this.onClose} 
@@ -145,6 +146,7 @@ export default class App extends Component {
       	{
       		this.state.modalVisible &&
       		<Modal 
+      			title={this.state.modalTitle}
       			modalClose={this.modalClose}
       			onOverlayClick={this.onOverlayClick}
       			handleModalRef={this.handleModalRef}

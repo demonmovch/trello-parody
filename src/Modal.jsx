@@ -14,7 +14,7 @@ export default class Modal extends Component{
 								>
 									<div className="modal" ref={this.handleModalRef}>
 										<h6>
-											Модальное окно
+											{this.props.title}
 										</h6>
 										<button 
 											className="modal__close"
@@ -22,7 +22,6 @@ export default class Modal extends Component{
 										>
 											&times;
 										</button>
-										Some content
 									</div>
 								</div>;
 		return createPortal(modal,	document.getElementById('modal'));

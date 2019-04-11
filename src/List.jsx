@@ -106,7 +106,6 @@ export default class List extends Component{
 
   onDoubleClick = () => {
   	this.setState({showHeadingRename: true});
-  	//this.props.onDoubleClick();
   }
 
   onRename = () => {
@@ -166,7 +165,7 @@ export default class List extends Component{
 							onDragStart={e => this.onDragStart(e, idx)}
 							onDragEnd={this.onDragEnd}
 							onDragOver={() => this.onDragOver(idx)}
-							onDoubleClick={this.props.onDoubleClick}
+							onDoubleClick={() => this.props.onDoubleClick(card.title)}
 						>
 							{card.title} 
 						</li>
